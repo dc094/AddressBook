@@ -8,6 +8,7 @@ public class ContactPerson {
     String lastName;
     String address;
     String city;
+    String state;
     int zip;
     long phoneNumber;
     String emailId;
@@ -23,6 +24,7 @@ public class ContactPerson {
             System.out.println("Last Name : " + contactPerson.get(j).lastName);
             System.out.println("Address : " + contactPerson.get(j).address);
             System.out.println("City Name : " + contactPerson.get(j).city);
+            System.out.println("City Name : " + contactPerson.get(j).state);
             System.out.println("Zip code : " + contactPerson.get(j).zip);
             System.out.println("Phone Number : " + contactPerson.get(j).phoneNumber);
             System.out.println("Email id : " + contactPerson.get(j).emailId);
@@ -52,6 +54,8 @@ public class ContactPerson {
         addressBookMain1.address = sc.next();
         System.out.print("Enter the City Name : ");
         addressBookMain1.city = sc.next();
+        System.out.print("Enter the State : ");
+        addressBookMain1.state = sc.next();
         System.out.print("Enter the zip code : ");
         addressBookMain1.zip = sc.nextInt();
         System.out.print("Enter the Phone number : ");

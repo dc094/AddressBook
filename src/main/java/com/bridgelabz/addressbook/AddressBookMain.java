@@ -14,7 +14,7 @@ public class AddressBookMain {
         boolean flag = true;
         int status = 1;
         while (flag) {
-            System.out.print("1 - Add more contact \n2 - Edit Contact \n3 - Delete person Contact \n4 - Show AddressBook " +
+            System.out.print("1 - Add more contact \n2 - Edit Contact \n3 - Delete person Contact \n4 - Show AddressBook "+
                     "\n0 -  for exit \nEnter your Choice.....");
             status = sc.nextInt();
 
@@ -30,7 +30,7 @@ public class AddressBookMain {
                 case 3:
                     System.out.println("Enter first name that you want to Delete record");
                     name = sc.next();
-                    contactPerson.deleteRecord(name, record);
+                    contactPerson.deleteRecord(name,record);
                     break;
                 case 4:
                     System.out.println("Side of record : " + record.size());
