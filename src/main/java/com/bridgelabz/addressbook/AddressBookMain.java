@@ -1,106 +1,69 @@
 package com.bridgelabz.addressbook;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class AddressBookMain {
-    private String FirstName;
-    private String LastName;
-    private String Address;
-    private String City;
-    private String State;
-    private int Zip;
-    private long PhoneNo;
-    private String Email;
+    String firstName;
+    String lastName;
+    String address;
+    String city;
+    int zip;
+    long phoneNumber;
+    String emailId;
 
-    public AddressBookMain(String first, String last, String add, String city, String state,
-                           int zip, long phone, String email) {
-        this.FirstName = first;
-        this.LastName = last;
-        this.Address = add;
-        this.City = city;
-        this.State = state;
-        this.Zip = zip;
-        this.PhoneNo = phone;
-        this.Email = email;
+    private void getInput() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the First Name : ");
+        this.firstName = sc.next();
+        System.out.print("Enter the Last Name : ");
+        this.lastName = sc.next();
+        System.out.print("Enter the Address : ");
+        this.address = sc.next();
+        System.out.print("Enter the City Name : ");
+        this.city = sc.next();
+        System.out.print("Enter the zip code : ");
+        this.zip = sc.nextInt();
+        System.out.print("Enter the Phone number : ");
+        this.phoneNumber = sc.nextLong();
+        System.out.print("Enter the Email ID : ");
+        this.emailId = sc.next();
     }
 
-    public String getFirstName() {
-        return FirstName;
+    private void showAddressBook() {
+        System.out.println("------------------------------------------------");
+        System.out.println("First Name : " + firstName);
+        System.out.println("Last Name : " + lastName);
+        System.out.println("Address : " + address);
+        System.out.println("City Name : " + city);
+        System.out.println("Zip code : " + zip);
+        System.out.println("Phone Number : " + phoneNumber);
+        System.out.println("Email id : " + emailId);
+        System.out.println("------------------------------------------------");
     }
 
-    public void setFirstName(String firstName) {
-        this.FirstName = firstName;
-    }
-
-    public String getLastName() {
-        return LastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.LastName = lastName;
-    }
-
-    public String getAddress() {
-        return Address;
-    }
-
-    public void setAddress(String address) {
-        this.Address = address;
-    }
-
-    public String getCity() {
-        return City;
-    }
-
-    public void setCity(String city) {
-        this.City = city;
-    }
-
-    public String getState() {
-        return State;
-    }
-
-    public void setState(String state) {
-        this.State = state;
-    }
-
-    public int getZip() {
-        return Zip;
-    }
-
-    public void setZip(int zip) {
-        this.Zip = zip;
-    }
-
-    public long getPhoneNo() {
-        return PhoneNo;
-    }
-
-    public void setPhoneNo(long phoneNo) {
-        this.PhoneNo = phoneNo;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String email) {
-        this.Email = email;
-    }
-
-
-    @Override
-    public String toString() {
-        return "\n First name : " + FirstName +
-                "\n Last name : " + LastName +
-                "\n Address : " + Address +
-                "\n City : " + City +
-                "\n State : " + State +
-                "\n Zip code : " + Zip +
-                "\n Phone number : " + PhoneNo +
-                "\n Email : " + Email;
-    }
 
     public static void main(String[] args) {
-        AddressBookMain addressBook = new AddressBookMain("Durgesh", "Chavan", "Nashik", "Nashik", "MH", 123456, 1234567890, "durgesh@gmail.com");
-        addressBook.toString();
+        System.out.println("Welcome to Address Book Program");
+        ArrayList<AddressBookMain> record=new ArrayList<>();
+        Scanner sc= new Scanner(System.in);
+        AddressBookMain addressBookMain1 = new AddressBookMain();
+        int status=1;
+        while(status==1) {
+            addressBookMain1.getInput();
+            record.add(addressBookMain1);
+
+            System.out.print("you want to add more address press 1 or 0 for exit ): ");
+            status = sc.nextInt();
+            if (status == 0) break;
+        }
+
+        for(int i=0;i<record.size();i++){
+            showAllRecords(record.get(i));
+        }
+    }
+
+    private static void showAllRecords(AddressBookMain addressBookMain) {
+        addressBookMain.showAddressBook();
     }
 }
