@@ -17,7 +17,6 @@ public class ContactPerson {
 
     public ContactPerson() {
 
-
     }
 
     public void addressBook(ArrayList<ContactPerson> contactPerson) {
@@ -28,12 +27,11 @@ public class ContactPerson {
             System.out.println("Last Name : " + contactPerson.get(j).lastName);
             System.out.println("Address : " + contactPerson.get(j).address);
             System.out.println("City Name : " + contactPerson.get(j).city);
-            System.out.println("City Name : " + contactPerson.get(j).state);
+            System.out.println("State Name : " + contactPerson.get(j).state);
             System.out.println("Zip code : " + contactPerson.get(j).zip);
             System.out.println("Phone Number : " + contactPerson.get(j).phoneNumber);
             System.out.println("Email id : " + contactPerson.get(j).emailId);
             System.out.println("------------------------------------------------");
-
         }
     }
 
@@ -48,7 +46,6 @@ public class ContactPerson {
     }
 
     public ContactPerson getInput() {
-
         ContactPerson addressBookMain1 = new ContactPerson();
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the First Name : ");
@@ -79,15 +76,6 @@ public class ContactPerson {
                 } else System.out.println("There is no any person contact for " + name);
             }
         } else System.out.println("There is no any person address to delete");
-
-    }
-
-    public Dictionary<String, ContactPerson> getInput(Dictionary<String, ContactPerson> dictionary) {
-        ContactPerson contactPerson = new ContactPerson();
-        System.out.println("Enter Name for dictionary");
-        String s = (new Scanner(System.in)).next();
-        dictionary.put(s, contactPerson.getInput());
-        return dictionary;
     }
 
     public void getAddressbook(Map<String, ContactPerson> addressBookHashMap) {
