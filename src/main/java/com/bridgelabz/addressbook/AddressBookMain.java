@@ -33,8 +33,10 @@ public class AddressBookMain {
                     arrayList=ContactList.editAddressBook();
                     if(addressBookHashMap.get(addressBookName)!=null)
                     {
-                        ArrayList temp=addressBookHashMap.get(addressBookName);
-                        arrayList.add(temp);
+                        //ArrayList temp=addressBookHashMap.get(addressBookName);
+                        arrayList.add(addressBookHashMap.get(addressBookName));
+                        // temp.add(arrayList);
+
                     }
                     addressBookHashMap.put(addressBookName,arrayList);
                     break;
